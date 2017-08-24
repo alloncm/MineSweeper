@@ -39,6 +39,13 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (wnd.mouse.LeftIsPressed())
+	{
+		int x = wnd.mouse.GetPosX();
+		int y = wnd.mouse.GetPosY();
+		Location l = { x,y };
+		brd.GetLeftClick(l);
+	}
 }
 
 void Game::ComposeFrame()

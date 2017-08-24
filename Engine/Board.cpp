@@ -128,3 +128,10 @@ void Board::DrawBoard()
 		_cells[i].Draw(gfx,Board::CellSize);
 	}
 }
+
+void Board::GetLeftClick(Location & loc)
+{
+	int x = loc.x / Board::CellSize;
+	int y = loc.y / Board::CellSize;
+	_cells[y*Width + x].Click();
+}

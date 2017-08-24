@@ -78,7 +78,7 @@ void Cell::Draw(Graphics & gfx,int size)
 			c = Colors::White;
 			break;
 		case CellCont::Number:
-			c = Colors::White;
+			c = Colors::Yellow;
 			break;
 		}
 		gfx.DrawSmalRect(_loc.x*size, _loc.y*size, size, size, c);
