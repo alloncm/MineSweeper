@@ -59,6 +59,14 @@ public:
 
 	void DrawRect(int x, int y, int width, int height, Color c);
 	void DrawSmalRect(int x, int y, int width, int height, Color c);
+	void DrawOne(int x, int y, int width, int height, Color c);
+	void DrawTwo(int x, int y, int width, int height, Color c);
+	void DrawThree(int x, int y, int width, int height, Color c);
+	void DrawFour(int x, int y, int width, int height, Color c);
+	void DrawFive(int x, int y, int width, int height, Color c);
+	void DrawSix(int x, int y, int width, int height, Color c);
+	void DrawSeven(int x, int y, int width, int height, Color c);
+	void DrawEight(int x, int y, int width, int height, Color c);
 
 	~Graphics();
 private:

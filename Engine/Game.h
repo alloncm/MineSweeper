@@ -24,6 +24,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include"Board.h"
+#include"FrameTimer.h"
 
 class Game
 {
@@ -44,5 +45,7 @@ private:
 	/********************************/
 	/*  User Variables              */
 	Board brd;
+	bool check;
+	int count;
 	/********************************/
 };

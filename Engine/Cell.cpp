@@ -33,7 +33,10 @@ Cell::Cell()
 
 void Cell::Click()
 {
-	_clicked = true;
+	if (this->_cover == CellCover::Blank)
+	{
+		_clicked = true;
+	}
 }
 
 Cell::CellCont Cell::GetContent() const
@@ -49,7 +52,7 @@ Cell::CellCover Cell::GetCover() const
 void Cell::Draw(Graphics & gfx,int size)
 {
 	Color c;
-	
+	bool isNUm = false;
 	if (!_clicked)
 	{
 		switch (_cover)
@@ -79,9 +82,40 @@ void Cell::Draw(Graphics & gfx,int size)
 			break;
 		case CellCont::Number:
 			c = Colors::Yellow;
+			isNUm = true;
 			break;
 		}
 		gfx.DrawSmalRect(_loc.x*size, _loc.y*size, size, size, c);
+		if (isNUm)
+		{
+			switch (_number)
+			{
+			case 1:
+				gfx.DrawOne(_loc.x *size, _loc.y*size, size, size, c);
+				break;
+			case 2:
+				gfx.DrawTwo(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 3:
+				gfx.DrawThree(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 4:
+				gfx.DrawFour(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 5:
+				gfx.DrawFive(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 6:
+				gfx.DrawSix(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 7:
+				gfx.DrawSeven(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			case 8:
+				gfx.DrawEight(_loc.x*size, _loc.y*size, size, size, c);
+				break;
+			}
+		}
 	}
 }
 

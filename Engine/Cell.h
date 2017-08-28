@@ -12,9 +12,10 @@ public:
 	};
 	enum class CellCover
 	{
-		Blank,
-		Mark,
-		Quest
+		Blank = 0,
+		Mark = 1,
+		Quest = 2
+
 	};
 public:
 	Cell(CellCover cov,CellCont cont,const Location& loc);

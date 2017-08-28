@@ -9,6 +9,8 @@ public:
 	void IncreaseNumbersAround(const Location & loc);
 	void DrawBoard();
 	void GetLeftClick(Location & loc);
+	void GetRightClick(Location & loc);
+	void UncoverAround(const Location loc);
 public:
 	static constexpr int CellSize = 40;
 	static constexpr int Width = Graphics::ScreenWidth / CellSize;
