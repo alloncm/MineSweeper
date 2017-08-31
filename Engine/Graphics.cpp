@@ -345,6 +345,11 @@ void Graphics::DrawOne(int x, int y, int width, int height, Color c)
 
 void Graphics::DrawTwo(int x, int y, int width, int height, Color c)
 {
+	x += 2;
+	y += 2;
+	width -= 4;
+	height -= 4;
+
 	int i = 0;
 	int j = 0;
 	for (i = x; i < x + width/2; i++)

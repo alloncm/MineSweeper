@@ -41,41 +41,44 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	if (wnd.mouse.LeftIsPressed())
+	if (!brd.IsGameOver())
 	{
-		int x = wnd.mouse.GetPosX();
-		int y = wnd.mouse.GetPosY();
-		Location l = { x,y };
-		brd.GetLeftClick(l);
-	}
-
-	//cheking the right mouse click
-	//while ensuring the program detects only one press at a time
-	if (check == false)
-	{
-		if (wnd.mouse.RightIsPressed())
+		if (wnd.mouse.LeftIsPressed())
 		{
 			int x = wnd.mouse.GetPosX();
 			int y = wnd.mouse.GetPosY();
 			Location l = { x,y };
-			brd.GetRightClick(l);
-			check = true;
+			brd.GetLeftClick(l);
 		}
-		
-	}
-	if (check)
-	{
-		count++;
-	}
-	if (count == 15)
-	{
-		count = 0;
-		check = false;
+
+		//cheking the right mouse click
+		//while ensuring the program detects only one press at a time
+		if (check == false)
+		{
+			if (wnd.mouse.RightIsPressed())
+			{
+				int x = wnd.mouse.GetPosX();
+				int y = wnd.mouse.GetPosY();
+				Location l = { x,y };
+				brd.GetRightClick(l);
+				check = true;
+			}
+
+		}
+		if (check)
+		{
+			count++;
+		}
+		if (count == 15)
+		{
+			count = 0;
+			check = false;
+		}
 	}
 }
 
 void Game::ComposeFrame()
 {
 	brd.DrawBoard();
-
+	
 }

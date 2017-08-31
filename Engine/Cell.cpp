@@ -138,3 +138,8 @@ const Location & Cell::GetLocation()
 {
 	return _loc;
 }
+
+bool Cell::IsClicked()
+{
+	return this->_clicked;
+}

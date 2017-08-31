@@ -30,6 +30,7 @@ public:
 	void SetContent(CellCont c);
 	void IncreaseNum();
 	const Location& GetLocation();
+	bool IsClicked();
 	
 private:
 	Location _loc;

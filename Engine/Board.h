@@ -11,6 +11,7 @@ public:
 	void GetLeftClick(Location & loc);
 	void GetRightClick(Location & loc);
 	void UncoverAround(const Location loc);
+	bool IsGameOver();
 public:
 	static constexpr int CellSize = 40;
 	static constexpr int Width = Graphics::ScreenWidth / CellSize;
@@ -20,5 +21,5 @@ private:
 	Graphics & gfx;
 	Cell _cells[Width*Height];
 	int _numBombs;
-	
+	bool _isOver;
 };

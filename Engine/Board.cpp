@@ -4,7 +4,8 @@
 #include<assert.h>
 
 Board::Board(int numBombs, Graphics & g) :
-	gfx(g)
+	gfx(g),
+	_isOver(false)
 {
 	_numBombs = numBombs;
 
@@ -134,6 +135,11 @@ void Board::GetLeftClick(Location & loc)
 	int x = loc.x / Board::CellSize;
 	int y = loc.y / Board::CellSize;
 	_cells[y*Width + x].Click();
+	if (_cells[y*Width + x].GetContent() == Cell::CellCont::Bomb&&_cells[y*Width + x].IsClicked())
+	{
+		_isOver = true;
+	}
+	UncoverAround({x,y});
 }
 
 void Board::GetRightClick(Location & loc)
@@ -159,7 +165,7 @@ void Board::GetRightClick(Location & loc)
 void Board::UncoverAround(const Location loc)
 {
 	_cells[loc.y*Width + loc.x].Click();
-	if (_cells[loc.y*Width + loc.x].GetContent()==Cell::CellCont::Empty)
+	if (_cells[loc.y*Width + loc.x].GetContent() == Cell::CellCont::Empty)
 	{
 		int startY = -1, startX = -1;
 		int finishY = 1, finishX = 1;
@@ -170,6 +176,7 @@ void Board::UncoverAround(const Location loc)
 			break;
 		case Height - 1:
 			finishY = 0;
+			break;
 		}
 		switch (loc.x)
 		{
@@ -178,17 +185,27 @@ void Board::UncoverAround(const Location loc)
 			break;
 		case Width - 1:
 			finishX = 0;
+			break;
 		}
 
 		for (int i = startY; i <= finishY; i++)
 		{
 			for (int j = startX; j <= finishX; j++)
 			{
-				if (_cells[(loc.y + i) * Width + (loc.x + j)].GetContent() == Cell::CellCont::Number)
+				if (_cells[(loc.y+i)*Width + loc.x+j].GetCover()==Cell::CellCover::Blank&&_cells[(loc.y+i)*Width + loc.x+j].IsClicked()==false)
 				{
-					UncoverAround({loc.x+j,loc.y+i});
+					if (j != 0 || i != 0)
+					{
+						UncoverAround({ loc.x + j,loc.y + i });
+					}
 				}
 			}
 		}
 	}
+	
+}
+
+bool Board::IsGameOver()
+{
+	return _isOver;
 }
