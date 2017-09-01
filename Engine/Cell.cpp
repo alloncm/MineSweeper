@@ -58,13 +58,13 @@ void Cell::Draw(Graphics & gfx,int size)
 		switch (_cover)
 		{
 		case CellCover::Blank:
-			c = Colors::Magenta;
+			c = Colors::Gray;
 			break;
 		case CellCover::Mark:
-			c = Colors::Red;
+			c = Colors::Blue;
 			break;
 		case CellCover::Quest:
-			c = Colors::Gray;
+			c = Colors::Magenta;
 			break;
 		}
 		
@@ -75,7 +75,7 @@ void Cell::Draw(Graphics & gfx,int size)
 		switch (_content)
 		{
 		case CellCont::Bomb:
-			c = Colors::Blue;
+			c = Colors::Red;
 			break;
 		case CellCont::Empty:
 			c = Colors::White;
