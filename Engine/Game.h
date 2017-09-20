@@ -45,7 +45,5 @@ private:
 	/********************************/
 	/*  User Variables              */
 	Board brd;
-	bool check;
-	int count;
 	/********************************/
 };

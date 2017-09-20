@@ -25,9 +25,7 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-	brd(20,gfx),
-	check(false),
-	count(0)
+	brd(20,gfx)
 {
 }
 
@@ -53,27 +51,24 @@ void Game::UpdateModel()
 
 		//cheking the right mouse click
 		//while ensuring the program detects only one press at a time
-		if (check == false)
+		if (wnd.mouse.RightIsPressed())
 		{
-			if (wnd.mouse.RightIsPressed())
+			bool isValid = true;
+			
+			while (!wnd.mouse.IsEmpty())
 			{
-				int x = wnd.mouse.GetPosX();
-				int y = wnd.mouse.GetPosY();
-				Location l = { x,y };
-				brd.GetRightClick(l);
-				check = true;
+				const Mouse::Event e = wnd.mouse.Read();
+				if (e.GetType() == Mouse::Event::Type::RPress&&isValid)
+				{
+					int x = wnd.mouse.GetPosX();
+					int y = wnd.mouse.GetPosY();
+					Location l = { x,y };
+					brd.GetRightClick(l);
+					isValid = false;
+				}
 			}
-
 		}
-		if (check)
-		{
-			count++;
-		}
-		if (count == 15)
-		{
-			count = 0;
-			check = false;
-		}
+		
 	}
 }
 
