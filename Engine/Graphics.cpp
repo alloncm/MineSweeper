@@ -338,8 +338,8 @@ void Graphics::DrawOne(int x, int y, int width, int height, Color c)
 	int j = (x + width / 2);
 	for (int i = y + 2; i < y + height - 2; i++)
 	{
-		PutPixel(j, i, Colors::White);
-		PutPixel(j+1, i, Colors::White);
+		PutPixel(j, i, c);
+		PutPixel(j+1, i, c);
 	}
 }
 
@@ -354,26 +354,26 @@ void Graphics::DrawTwo(int x, int y, int width, int height, Color c)
 	int j = 0;
 	for (i = x; i < x + width/2; i++)
 	{
-		PutPixel(i, y, Colors::White);
+		PutPixel(i, y, c);
 	}
 	for (j = y; j < y + height/2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	
 	for (i; i > x; i--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	
 	for (j; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j,c);
 	}
 	
 	for (i = x; i < x + width/2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	
 }
@@ -384,23 +384,23 @@ void Graphics::DrawThree(int x, int y, int width, int height, Color c)
 	int j = 0;
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, y, Colors::White);
+		PutPixel(i, y, c);
 	}
 	for (j = y; j < y + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (j = y; j < y + height ; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 
 }
@@ -411,15 +411,15 @@ void Graphics::DrawFour(int x, int y, int width, int height, Color c)
 	int j = y;
 	for (j = y; j < y + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j,c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (j = y; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 }
 
@@ -429,25 +429,25 @@ void Graphics::DrawFive(int x, int y, int width, int height, Color c)
 	int j = 0;
 	for (i = x + width / 2; i > x; i--)
 	{
-		PutPixel(i, y, Colors::White);
+		PutPixel(i, y, c);
 	}
 	for (j = y ; j < y + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	
 	for (j = y + height / 2; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	
 	for (i = x + width / 2;i>x; i--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 }
 
@@ -457,29 +457,29 @@ void Graphics::DrawSix(int x, int y, int width, int height, Color c)
 	int j = 0;
 	for (i = x + width / 2; i > x; i--)
 	{
-		PutPixel(i, y, Colors::White);
+		PutPixel(i, y, c);
 	}
 	for (j = y; j < y + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 
 	for (j = y + height / 2; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 
 	for (i = x + width / 2; i>x; i--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (j; j > y + height / 2; j--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j,c);
 	}
 }
 
@@ -489,11 +489,11 @@ void Graphics::DrawSeven(int x, int y, int width, int height, Color c)
 	int i = x;
 	for (i; i < x + width/2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (j = y; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 }
 
@@ -503,34 +503,34 @@ void Graphics::DrawEight(int x, int y, int width, int height, Color c)
 	int j = 0;
 	for (i = x + width / 2; i > x; i--)
 	{
-		PutPixel(i, y, Colors::White);
+		PutPixel(i, y, c);
 	}
 	for (j = y; j < y + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (i = x; i < x + width / 2; i++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j,c);
 	}
 
 	for (j = y + height / 2; j < y + height; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 
 	for (i = x + width / 2; i>x; i--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	for (j; j > y + height / 2; j--)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 	i = x + width / 2;
 	for (j = y; j < x + height / 2; j++)
 	{
-		PutPixel(i, j, Colors::White);
+		PutPixel(i, j, c);
 	}
 }
 
