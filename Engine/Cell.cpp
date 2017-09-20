@@ -86,6 +86,7 @@ void Cell::Draw(Graphics & gfx,int size)
 			break;
 		}
 		gfx.DrawSmalRect(_loc.x*size, _loc.y*size, size, size, c);
+		c = Colors::Black;
 		if (isNUm)
 		{
 			switch (_number)
